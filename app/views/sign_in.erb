@@ -2,7 +2,7 @@
 
 <form action="/create_user" method='post'>
   Email:
-  <input type='email' name='email' value='<%= @user.email %>' required>
+  <input type='text' name='email' value='<%= @user.email %>'>
   Password:
   <input type='password' name='password' required>
   Confirm Password:
@@ -11,5 +11,7 @@
 </form>
 
 <% if flash[:notice] %>
-<%=flash[:notice]%>
+  <% flash[:notice].each do |message| %>
+    <div><%=message%></div>
+  <%end%>
 <% end %>
