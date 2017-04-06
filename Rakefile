@@ -4,7 +4,7 @@ require './app/app.rb'
 namespace :db do
 
   desc "Non destructive upgrade"
-  task :auto_upgrade do
+  task :auto_upgrade do   
     DataMapper.auto_upgrade!
     puts 'DataMapper auto_upgrade has been run! (No data loss.)'
   end

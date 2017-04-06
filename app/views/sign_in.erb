@@ -2,13 +2,14 @@
 
 <form action="/create_user" method='post'>
   Email:
-  <input type='email' name='email' required>
+  <input type='email' name='email' value='<%= @user.email %>' required>
   Password:
   <input type='password' name='password' required>
   Confirm Password:
   <input type='password' name='confirm_password' required>
-    <% if @fail == true %>
-      <font color='red'>Your passwords don't match</font>
-    <%end%>
   <input type='submit' value='Sign in'>
 </form>
+
+<% if flash[:notice] %>
+<%=flash[:notice]%>
+<% end %>

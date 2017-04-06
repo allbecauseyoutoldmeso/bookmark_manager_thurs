@@ -13,5 +13,6 @@ feature 'User and password' do
     fill_in 'confirm_password', with: "sam2"
     click_button "Sign in"
     expect(User.count).to eq 0
+    expect(page).to have_content "Your passwords don't match"
   end
 end
