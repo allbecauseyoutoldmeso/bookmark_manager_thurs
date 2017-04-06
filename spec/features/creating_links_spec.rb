@@ -1,8 +1,8 @@
 feature "user can add links" do
   before do
-    sign_in
+    sign_up
   end
-  
+
   scenario "save links to database" do
     create_link
     expect(current_path).to eq '/links'

@@ -1,17 +1,7 @@
-<h1> Welcome to the greatest bookmark manager... In the world! </h1>
+Please sign in here.
 
-<form action="/create_user" method='post'>
-  Email:
-  <input type='text' name='email' value='<%= @user.email %>'>
-  Password:
-  <input type='password' name='password' required>
-  Confirm Password:
-  <input type='password' name='confirm_password' required>
+<form action='/return_user' method='post'>
+  <input type='text' name='email'>
+  <input type='text' name='password'>
   <input type='submit' value='Sign in'>
 </form>
-
-<% if flash[:notice] %>
-  <% flash[:notice].each do |message| %>
-    <div><%=message%></div>
-  <%end%>
-<% end %>

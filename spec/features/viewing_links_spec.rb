@@ -1,8 +1,8 @@
 feature 'viewing links' do
   before do
-    sign_in
+    sign_up
   end
-  
+
   scenario 'there is a list of links on the homepage' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy') # datamapper syntax
     visit '/links' # Visit the links URL

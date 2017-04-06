@@ -1,6 +1,6 @@
 feature 'User and password' do
   scenario 'sign up and create password' do
-    sign_in
+    sign_up
     expect(current_path).to eq '/links'
     expect(page).to have_content "Welcome sam@sam.sam"
     expect(User.count).to eq 1
@@ -27,7 +27,7 @@ feature 'User and password' do
   end
 
   scenario 'try to sign up whe already have account' do
-    sign_in
+    sign_up
     visit '/'
     fill_in 'email', with: "sam@sam.sam"
     fill_in 'password', with: "sam2"

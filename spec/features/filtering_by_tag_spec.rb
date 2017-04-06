@@ -1,6 +1,6 @@
 feature "user can view tags" do
   before do
-    sign_in
+    sign_up
   end
 
   scenario "filter by tag" do

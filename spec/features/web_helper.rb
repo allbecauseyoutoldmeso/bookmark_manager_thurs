@@ -6,7 +6,7 @@ def create_link
   click_button "Save link"
 end
 
-def sign_in
+def sign_up
   visit '/'
   fill_in 'email', with: "sam@sam.sam"
   fill_in 'password', with: "sam1"

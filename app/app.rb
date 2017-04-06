@@ -10,7 +10,7 @@ class BookmarkManager < Sinatra::Base
 
   get '/' do
     @user = User.new
-    erb :sign_in
+    erb :sign_up
   end
 
   post '/create_user' do
@@ -21,8 +21,19 @@ class BookmarkManager < Sinatra::Base
         redirect '/links'
       else
         flash.now[:notice] = @user.errors.full_messages
-        erb :sign_in
+        erb :sign_up
       end
+  end
+
+  get '/sign_in' do
+    erb :'sign_in'
+  end
+
+  post '/return_user' do
+    # require 'pry'; binding.pry
+    user = User.first(:email => params[:email])
+    session[:user_id] = user.id
+    redirect '/links'
   end
 
   get '/links' do # The path / url.
